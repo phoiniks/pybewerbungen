@@ -1,0 +1,56 @@
+\documentclass[a4paper,11pt]{dinbrief} 
+\usepackage[utf8]{inputenc}
+\usepackage[greek.polutoniko, ngerman]{babel}
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\setlength{\headheight}{1.1\baselineskip}
+\usepackage{scrdate}
+\usepackage{footnote}
+\usepackage{scrlayer-scrpage}
+\setlength{\headsep}{10mm}
+\pagestyle{scrheadings}
+\chead{\textgreek{>En >arq\~h| \~>hn <o l'ogoc}}
+\pagenumbering{gobble}
+\hyphenation{ Office }
+\begin{document}
+\subject{ {{ bezeichnung }} }
+\backaddress{Andreas Grell,
+  Kühnehöfe 25,
+  D-22761 Hamburg
+} 
+\signature{Andreas Grell} 
+\Datum{\todaysname, \today} 
+\address{Andreas Grell \\
+  Hispanist, Germanist, Softwareentwickler \\
+  Kühnehöfe 25 \\
+  D-22761 Hamburg} 
+  \vspace{2em} \\
+
+  \begin{tabular}{ll}
+  Festnetz: & 040 80 60 37 99 \\
+  Mobil: & 01768 52 52 638
+  \end{tabular}
+\begin{letter}
+    { {{ firma|safe }} \\
+    {% if anrede == 'Herr' %}
+      z.Hd. {{- ' ' + anrede }}n {{- ' ' + ansprechpartner }} \\
+    {% endif %}
+    {% if anrede == 'Frau' %}
+      z.Hd.{{- ' ' + anrede }} {{- ' ' + ansprechpartner }} \\
+    {% endif %}
+    {{ strasse }} \\ 
+    {{ ort }} }
+    % Dies ist übrigens ein Befehl: \begin{letter}{Adresse}
+    {% if anrede == 'Herr' %}
+      \opening{ Sehr geehrter {{- ' ' + anrede }} {{- ' ' + ansprechpartner }},}
+    {% endif %}      
+    {% if anrede == 'Frau' %}
+      \opening{ Sehr geehrte {{- ' ' + anrede }} {{- ' ' + ansprechpartner }},}
+    {% endif %}      
+
+      Sollten Ihnen mein hier freilich nur grob umrissenes Profil, der absteigend chronologisch geordnete Lebenslauf und die ebenso angeordneten weiteren Dokumente zusagen, so würde ich mich freuen, Sie und Ihre Schule bei einem unverbindlichen Gespräch näher kennen lernen zu dürfen, und verbleibe
+
+\closing{mit freundlichen Grüßen}
+\par
+\encl{Lebenslauf und Zeugnisse} 
+\end{letter} 
+\end{document} 
